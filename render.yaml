@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: civic-mind-ai
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false # User will set this in Render Dashboard
